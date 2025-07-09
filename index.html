@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="manifest" href="manifest.json">
+  <title>My PWA</title>
+</head>
+<body>
+  <h1>Halo Dunia! 👋</h1>
+  <p>Ini adalah aplikasi PWA sederhana.</p>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js')
+          .then(reg => console.log('ServiceWorker terdaftar', reg))
+          .catch(err => console.log('Gagal registrasi ServiceWorker:', err));
+      });
+    }
+  </script>
+</body>
+</html>
